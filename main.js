@@ -21,48 +21,58 @@ function randomChoice(number){
     }else if(number <= 9){
         //7, 8, 9
         cpuResult = 3 //scissors
-    }
+    }return cpuResult
 }
-/*
-function results(){
+//console.log(randomChoice()) FUNCIONA 
+/*<div>
+            <p class="js_player_result"></p>
+            <p class="js_CPU_results"></p>
+            <p class="js_message_results"></p>
+        </div>
+
+*/
+function results(playerChoice, cpuResult){
     if(playerChoice = cpuResult){
-        
-        return "empate"
+    playerResult.innerHTML = "";
+    cpuResult.innerHTML = "";
+    messageResult.innerHTML = "¡Ha sido empate!"
     }
     else if(playerChoice != cpuResult){
         //piedra -> 1 gana a 3
         //papel -> 2 gana a 1
         //tijeras -> 3 gana a 2
         if(playerChoice = 1){
+            playerResult.innerHTML = "Has elegido piedra";
             if(cpuResult = 2){
-                return "oh no"
-            }else if(cpuResult=3){
-                return "tú si que sabes"
+                cpuResult.innerHTML = "He elegido papel";
+                messageResult.innerHTML = "¡Yo gano!"
+            }else if(cpuResult = 3){
+                cpuResult.innerHTML = "He elegido tijeras";
+                messageResult.innerHTML = "¡Tú ganas!"
             }
         }
         if(playerChoice = 2){
             if(cpuResult = 3){
-                return "oh no"
+                
             }else if(cpuResult = 1){
-                return "tú si que sabes"
+                
             }
         }
         if(playerChoice = 3){
             if(cpuResult = 1){
-                return "oh no"
+                
             }else if(cpuResult = 2){
-                return "tú si que sabes"
+                
             }
         }
     }
 }
 
-
+/*
 //eventos
     playBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
-        cpuResult()
-        results()
+        
     })
     replayBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
