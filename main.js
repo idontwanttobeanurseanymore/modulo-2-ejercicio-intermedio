@@ -1,14 +1,16 @@
-//Variables
+'use strict';
+//QUERY-SELECTOR
 const playerChoice = document.querySelector(".js_player_choice");
 const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
-//datos
+
+//DATA
 let playerPlay = playerChoice.value
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_message_result");
 
-//funciones
+//FUNCTIONS
 function randomChoice(number){
     number = Math.floor(Math.random()*10);
     if (number <= 3){
@@ -21,44 +23,43 @@ function randomChoice(number){
         //7, 8, 9
         cpuResult = "scissors"
     }
-    return cpuResult
 }
-
 function playResults(playerPlay, cpuResult){
+    randomChoice();
     if(playerPlay = cpuResult){
-    messageResult = "¡Ha sido empate!"
+    messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que... ¡Empatamos!`
     }else{
         if(playerPlay = "rock"){
             if(cpuResult = "paper"){
-                messageResult = "¡Yo gano!"
+                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que...¡Yo gano!`
             }else if(cpuResult = "scissors"){
-                messageResult = "¡Tú ganas!"
+                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que...¡Tú ganas!`
             }
         }if(playerPlay = "paper"){
             if(cpuResult = "scissors"){
-                messageResult = "¡Yo gano!";
+                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que...¡Yo gano!`;
             }else if(cpuResult = "rock"){
-                messageResult = "¡Tú ganas!";
+                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que...¡Tú ganas!`;
             }
         }if(playerPlay = "scissors"){
             if(cpuResult = "rock"){
-                messageResult = "¡Yo gano!"
+                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que...¡Yo gano!`
             }else if(cpuResult = "paper"){
-                messageResult = "¡Tú ganas!"
+                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que...¡Tú ganas!`
             }
         }
-    } messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que... ${messageResult}`
-    return "no entiendo nada"
+    }
 }
-console.log(playResults())
-//siempre muestra "Yo gano!"
-//console.log(randomChoice())
-
-
-//funciones de eventos: actualizan los datos
-
-//playBtn.addEventListener('click', results)
-//eventos    
+//EVENTS' FUNCTIONS
+const clickPlayBtn = () => {
+    playResults()
+}
+//eventos
+clickPlayBtn.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    
+})
+    
 /*
 replayBtn.addEventListener('click', () => {
     variable.classList.contains(.collapsed) +add/remove       
