@@ -5,7 +5,7 @@ const replayBtn = document.querySelector(".js_replayBtn")
 
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
-let resultMessage = document.querySelector(".js_result_message");
+let messageResult = document.querySelector(".js_result_message");
 
 //funciones
 //eleccion de un número al azar
@@ -33,41 +33,47 @@ function randomChoice(number){
 */
 function results(playerChoice, cpuResult){
     if(playerChoice = cpuResult){
-    playerResult.innerHTML = "";
-    cpuResult.innerHTML = "";
-    messageResult.innerHTML = "¡Ha sido empate!"
+    playerResult = "";
+    cpuResult = "";
+    messageResult = "¡Ha sido empate!"
     }
     else if(playerChoice != cpuResult){
         //piedra -> 1 gana a 3
         //papel -> 2 gana a 1
         //tijeras -> 3 gana a 2
         if(playerChoice = 1){
-            playerResult.innerHTML = "Has elegido piedra";
+            playerResult = "Has elegido piedra";
             if(cpuResult = 2){
-                cpuResult.innerHTML = "He elegido papel";
-                messageResult.innerHTML = "¡Yo gano!"
+                cpuResult = "He elegido papel";
+                messageResult = "¡Yo gano!"
             }else if(cpuResult = 3){
-                cpuResult.innerHTML = "He elegido tijeras";
-                messageResult.innerHTML = "¡Tú ganas!"
+                cpuResult = "He elegido tijeras";
+                messageResult = "¡Tú ganas!"
             }
         }
         if(playerChoice = 2){
+            playerResult = "Has elegido papel";
             if(cpuResult = 3){
-                
+                cpuResult = "He elegido tijeras";
+                messageResult = "¡Yo gano!";
             }else if(cpuResult = 1){
-                
+                cpuResult = "He elegido piedra";
+                messageResult = "¡Tú ganas!";
             }
         }
         if(playerChoice = 3){
+            playerResult = "Has elegido tijeras";
             if(cpuResult = 1){
-                
+                cpuResult = "He elegido piedra"
+                messageResult = "¡Yo gano!"
             }else if(cpuResult = 2){
-                
+                cpuResult = "He elegido papel"
+                messageResult = "¡Tú ganas!"
             }
         }
     }
 }
-
+console.log(results(1, 3))
 /*
 //eventos
     playBtn.addEventListener('click', (ev) => {
