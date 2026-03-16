@@ -7,7 +7,6 @@ let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_result_message");
 
-
 //funciones
 
 function randomChoice(number){
@@ -27,6 +26,7 @@ function randomChoice(number){
 //FUNCIONA 
 function results(playerPlay, cpuResult){
     playerPlay = playerChoice.value
+    randomChoice();
     if(playerPlay = cpuResult){
     messageResult = "¡Ha sido empate!"
     }else{
@@ -36,8 +36,7 @@ function results(playerPlay, cpuResult){
             }else if(cpuResult = "scissors"){
                 messageResult = "¡Tú ganas!"
             }
-        }if(playerPlay = "rock"){
-
+        }if(playerPlay = "paper"){
             if(cpuResult = "scissors"){
                 messageResult = "¡Yo gano!";
             }else if(cpuResult = "rock"){
@@ -47,19 +46,23 @@ function results(playerPlay, cpuResult){
         if(playerPlay = "scissors"){
             if(cpuResult = "rock"){
                 messageResult = "¡Yo gano!"
-            }else if(cpuResult = 2){
+            }else if(cpuResult = "paper"){
                 messageResult = "¡Tú ganas!"
             }
         }
-    }
+    }return messageResult
 }
 console.log(results())
-/*
+//algo hace, pero siempre muestra "Yo gano!"
+
+
 //eventos
     playBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
-        
+        results();
+
     })
+/*
     replayBtn.addEventListener('click', () => {
         
         //cuando juege 10 movimientos, mostrar
