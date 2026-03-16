@@ -1,5 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, papel y tijeras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Juego Piedra, Papel y Tijeras</h1>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Introduce aquí tu jugada</h2>
+        <div class="js_options">
+            <form class="js_player_options">
+                <label for="js_player_choice">
+                    <select id="js_player_choice" name="js_player_choice" class="js_player_choice">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">Piedra</option>
+                        <option value="2">Papel</option>
+                        <option value="3">Tijeras</option>
+                    </select>
+                </label>
+            </form>
+        </div>
+      <button id="btn js_playBtn">Jugar</button>
+      <button class=" btn js_replayBtn">Volver</button>
+
+      <p class="results">Resultados</p>
+        <div>
+            <p class="js_player_result"></p>
+            <p class="js_CPU_results"></p>
+            <p class="js_message_results"></p>
+        </div>
+
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -36,4 +86,4 @@
             </div>
         </form>
     </main>
-</body>
+</body> -->

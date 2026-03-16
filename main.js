@@ -2,26 +2,31 @@
 const playerChoice = document.querySelector(".js_player_choice");
 const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
-const playerResult = document.querySelector(".js_player_result");
-const cpuResult = document.querySelector(".js_CPU_result");
-const resultMessage = document.querySelector(".js_result_message");
+
+let playerResult = document.querySelector(".js_player_result");
+let cpuResult = document.querySelector(".js_CPU_result");
+let resultMessage = document.querySelector(".js_result_message");
 
 //funciones
-//eleccion del ordenador
-function cpuChoice(max){
-    let cpuResult = Math.ceil(Math.random()* max);
-    if (cpuResult >= 3){
-        cpuResult = "1"
-    }else if (cpuResult >= 7){
-        cpuResult = "2"
-    }else{
-        cpuResult = "3"
+//eleccion de un número al azar
+
+function randomChoice(number){
+    number = Math.floor(Math.random()*10);
+    if (number <= 3){
+        //0, 1, 2, 3
+        cpuResult = 1 //rock
+    }else if (number <=6){
+        //4, 5, 6
+        cpuResult = 2 //paper
+    }else if(number <= 9){
+        //7, 8, 9
+        cpuResult = 3 //scissors
     }
 }
-console.log(cpuChoice(max))
-//resultados 
+/*
 function results(){
     if(playerChoice = cpuResult){
+        
         return "empate"
     }
     else if(playerChoice != cpuResult){
@@ -51,6 +56,8 @@ function results(){
         }
     }
 }
+
+
 //eventos
     playBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
@@ -63,4 +70,4 @@ function results(){
     })
 
 //partida acaba en 10 movimientos
-//
+*/
