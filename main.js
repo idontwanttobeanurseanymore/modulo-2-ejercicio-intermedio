@@ -2,87 +2,67 @@
 const playerChoice = document.querySelector(".js_player_choice");
 const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
-
+//datos
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_result_message");
 
+
 //funciones
-//eleccion de un número al azar
 
 function randomChoice(number){
     number = Math.floor(Math.random()*10);
     if (number <= 3){
         //0, 1, 2, 3
-        cpuResult = 1 //rock
+        cpuResult = "rock"
     }else if (number <=6){
         //4, 5, 6
-        cpuResult = 2 //paper
+        cpuResult = "paper"
     }else if(number <= 9){
         //7, 8, 9
-        cpuResult = 3 //scissors
+        cpuResult = "scissors"
     }return cpuResult
 }
-//console.log(randomChoice()) FUNCIONA 
-/*
-        <div>
-            <p class="js_player_result"></p>
-            <p class="js_CPU_results"></p>
-            <p class="js_message_results"></p>
-        </div>
-
-*/
-function results(playerChoice, cpuResult){
-    if(playerChoice = cpuResult){
-    playerResult = "";
-    cpuResult = "";
+//console.log(randomChoice()) 
+//FUNCIONA 
+function results(playerPlay, cpuResult){
+    playerPlay = playerChoice.value
+    if(playerPlay = cpuResult){
     messageResult = "¡Ha sido empate!"
-    } else if(playerChoice != cpuResult){
-        //piedra -> 1 gana a 3
-        //papel -> 2 gana a 1
-        //tijeras -> 3 gana a 2
-        if(playerChoice = 1){
-            playerResult = "Has elegido piedra";
-            if(cpuResult = 2){
-                cpuResult = "He elegido papel";
+    }else{
+        if(playerPlay = "rock"){
+            if(cpuResult = "paper"){
                 messageResult = "¡Yo gano!"
-            }else if(cpuResult = 3){
-                cpuResult = "He elegido tijeras";
+            }else if(cpuResult = "scissors"){
                 messageResult = "¡Tú ganas!"
             }
-        }
-        if(playerChoice = 2){
-            playerResult = "Has elegido papel";
-            if(cpuResult = 3){
-                cpuResult = "He elegido tijeras";
+        }if(playerPlay = "rock"){
+
+            if(cpuResult = "scissors"){
                 messageResult = "¡Yo gano!";
-            }else if(cpuResult = 1){
-                cpuResult = "He elegido piedra";
+            }else if(cpuResult = "rock"){
                 messageResult = "¡Tú ganas!";
             }
         }
-        if(playerChoice = 3){
-            playerResult = "Has elegido tijeras";
-            if(cpuResult = 1){
-                cpuResult = "He elegido piedra"
+        if(playerPlay = "scissors"){
+            if(cpuResult = "rock"){
                 messageResult = "¡Yo gano!"
             }else if(cpuResult = 2){
-                cpuResult = "He elegido papel"
                 messageResult = "¡Tú ganas!"
             }
         }
     }
 }
-console.log(results(1, 3))
+console.log(results())
 /*
 //eventos
     playBtn.addEventListener('click', (ev) => {
         ev.preventDefault();
         
     })
-    replayBtn.addEventListener('click', (ev) => {
-        ev.preventDefault();
-        //borrar todo
+    replayBtn.addEventListener('click', () => {
+        
+        //cuando juege 10 movimientos, mostrar
     })
 
 //partida acaba en 10 movimientos
