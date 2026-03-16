@@ -3,12 +3,12 @@ const playerChoice = document.querySelector(".js_player_choice");
 const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
 //datos
+let playerPlay = playerChoice.value
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
-let messageResult = document.querySelector(".js_result_message");
+let messageResult = document.querySelector(".js_message_result");
 
 //funciones
-
 function randomChoice(number){
     number = Math.floor(Math.random()*10);
     if (number <= 3){
@@ -20,13 +20,11 @@ function randomChoice(number){
     }else if(number <= 9){
         //7, 8, 9
         cpuResult = "scissors"
-    }return cpuResult
+    }
+    return cpuResult
 }
-//console.log(randomChoice()) 
-//FUNCIONA 
-function results(playerPlay, cpuResult){
-    playerPlay = playerChoice.value
-    randomChoice();
+
+function playResults(playerPlay, cpuResult){
     if(playerPlay = cpuResult){
     messageResult = "¡Ha sido empate!"
     }else{
@@ -42,31 +40,30 @@ function results(playerPlay, cpuResult){
             }else if(cpuResult = "rock"){
                 messageResult = "¡Tú ganas!";
             }
-        }
-        if(playerPlay = "scissors"){
+        }if(playerPlay = "scissors"){
             if(cpuResult = "rock"){
                 messageResult = "¡Yo gano!"
             }else if(cpuResult = "paper"){
                 messageResult = "¡Tú ganas!"
             }
         }
-    }return messageResult
+    } messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuResult}, así que... ${messageResult}`
+    return "no entiendo nada"
 }
-console.log(results())
-//algo hace, pero siempre muestra "Yo gano!"
+console.log(playResults())
+//siempre muestra "Yo gano!"
+//console.log(randomChoice())
 
 
-//eventos
-    playBtn.addEventListener('click', (ev) => {
-        ev.preventDefault();
-        results();
+//funciones de eventos: actualizan los datos
 
-    })
+//playBtn.addEventListener('click', results)
+//eventos    
 /*
-    replayBtn.addEventListener('click', () => {
-        
-        //cuando juege 10 movimientos, mostrar
-    })
+replayBtn.addEventListener('click', () => {
+    variable.classList.contains(.collapsed) +add/remove       
+//cuando juege 10 movimientos, mostrar
+})
 
 //partida acaba en 10 movimientos
 */
