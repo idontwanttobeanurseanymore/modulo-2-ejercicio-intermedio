@@ -24,7 +24,8 @@ function randomChoice(number){
     }return cpuResult
 }
 //console.log(randomChoice()) FUNCIONA 
-/*<div>
+/*
+        <div>
             <p class="js_player_result"></p>
             <p class="js_CPU_results"></p>
             <p class="js_message_results"></p>
@@ -36,8 +37,7 @@ function results(playerChoice, cpuResult){
     playerResult = "";
     cpuResult = "";
     messageResult = "¡Ha sido empate!"
-    }
-    else if(playerChoice != cpuResult){
+    } else if(playerChoice != cpuResult){
         //piedra -> 1 gana a 3
         //papel -> 2 gana a 1
         //tijeras -> 3 gana a 2
