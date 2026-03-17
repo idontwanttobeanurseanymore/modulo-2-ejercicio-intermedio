@@ -13,10 +13,10 @@
     <h1>Juego Piedra, Papel y Tijeras</h1>
   </header>
 
-  <main class="container">
+  <main class="gameBox">
 
-    <section class="card">
-      <h2>Introduce aquí tu jugada</h2>
+    <section class="game">
+      <h2>Elige aquí tu jugada</h2>
         <div class="js_options">
             <form class="js_player_options">
                 <label for="js_player_choice">
@@ -30,17 +30,17 @@
             </form>
         </div>
       <button class="btn js_playBtn">Jugar</button>
-      <div class="js_message_result"></div>
-        <div>
-            <p class="js_player_result"></p>
-            <p class="js_CPU_result"></p>
-            
+        <div class="results">
+            <div class="message js_message_result">
+                <p class="playerMessage js_player_result"></p>
+                <p class="cpuMessage js_CPU_result"></p>
+            </div>
         </div>
-      <p class="scoreboard">Contador</p>
-        <div>
+      
+        <div class="scoreboard collapsed">
+            <p class="scoreboard">Contador</p>
             <p class="js_player_score">Tus puntos:</p>
             <p class="js_CPU_score">Mis puntos:</p>
-            
         </div>
          <button class="btn js_replayBtn collapsed">Volver a empezar</button>
     </section>

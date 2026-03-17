@@ -5,7 +5,6 @@ const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
 
 //DATA
-
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_message_result");
@@ -29,28 +28,30 @@ function randomChoice(number){
 function playResults(){
     const playerPlay = playerChoice.value;
     const cpuPlay = randomChoice();
-    playerResult.innerHTML = playerPlay;
-    cpuResult.innerHTML = cpuPlay;
+
+    playerResult.innerHTML = `${playerPlay}`;
+    cpuResult.innerHTML = `${cpuPlay}`;
+
     if(playerPlay === cpuPlay){
-    messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que... ¡Empatamos!`
+    messageResult.innerHTML = `¡Empatamos!`
     }else{
         if(playerPlay === "rock"){
             if(cpuPlay === "paper"){
-                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que...¡Yo gano!`
+                messageResult.innerHTML = `¡Yo gano!`
             }else if(cpuPlay === "scissors"){
-                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que...¡Tú ganas!`
+                messageResult.innerHTML = `¡Tú ganas!`
             }
         }if(playerPlay === "paper"){
             if(cpuPlay === "scissors"){
-                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que...¡Yo gano!`;
+                messageResult.innerHTML = `¡Yo gano!`;
             }else if(cpuPlay === "rock"){
-                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que...¡Tú ganas!`;
+                messageResult.innerHTML = `¡Tú ganas!`;
             }
         }if(playerPlay === "scissors"){
             if(cpuPlay === "rock"){
-                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que...¡Yo gano!`
+                messageResult.innerHTML = `¡Yo gano!`
             }else if(cpuPlay === "paper"){
-                messageResult.innerHTML = `Elegiste ${playerPlay} y yo ${cpuPlay}, así que...¡Tú ganas!`
+                messageResult.innerHTML = `¡Tú ganas!`
             }
         }
     }
@@ -66,5 +67,4 @@ replayBtn.addEventListener('click', () => {
 //cuando juege 10 movimientos, mostrar
 })
 
-//partida acaba en 10 movimientos
 */
