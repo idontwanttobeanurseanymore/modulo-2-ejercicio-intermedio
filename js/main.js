@@ -19,18 +19,20 @@ let playerCount = 0;
 let cpuCount = 0;
 
 //FUNCTIONS
-
 function randomChoice() {
     return plays[Math.floor(Math.random() * 3)];
 }
 function gameplayRock() {
     const cpuPlay = randomChoice()
     if (cpuPlay === "rock") {
+        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You read my mind!`
     } else if (cpuPlay === "paper") {
+        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         cpuCount += 1
         messageResult.innerHTML = `You lose!`
     } else if (cpuPlay === "scissors") {
+        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         playerCount += 1
         messageResult.innerHTML = `You win!`
     }
@@ -40,32 +42,29 @@ function gameplayPaper() {
     if (cpuPlay === "paper") {
         messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You read my mind!`
-        //Tie
     } else if (cpuPlay === "rock") {
         playerCount += 1
         messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You win!`
-        //You win! 
     } else if (cpuPlay === "scissors") {
         cpuCount += 1
         messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You lose!`
-        //You lose!
     }
 }
 function gameplayScissors() {
     const cpuPlay = randomChoice()
     if (cpuPlay === "scissors") {
-        //Tie
+        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You read my mind!`
     } else if (cpuPlay === "rock") {
-        //You lose!
+        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         cpuCount += 1
         messageResult.innerHTML = `You lose!`
     } else if (cpuPlay === "paper") {
+        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         playerCount += 1
         messageResult.innerHTML = `You win!`
-        //You win!
     }
 }
 function scoreboard() {
@@ -73,7 +72,6 @@ function scoreboard() {
     cpuScore.innerHTML = `${cpuCount}`
 }
 //EVENTS
-
 rockBtn.addEventListener("click", () => {
     count++
     gameplayRock();
@@ -82,12 +80,11 @@ rockBtn.addEventListener("click", () => {
     if (count >= 10) {
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
+        messagecpuResult.classList.add('collapsed');
         if (playerCount > cpuCount) {
             messageResult.innerHTML = "You win!!";
-            messagecpuResult.innerHTML = "";
         } else {
             messageResult.innerHTML = "Game over!!";
-            messagecpuResult.innerHTML = "";
         }
     }
 });
@@ -99,12 +96,11 @@ paperBtn.addEventListener("click", () => {
     if (count >= 10) {
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
+        messagecpuResult.classList.add('collapsed');
          if (playerCount > cpuCount) {
             messageResult.innerHTML = "You win!!";
-            messagecpuResult.innerHTML = "";
         } else {
             messageResult.innerHTML = "Game over!!";
-            messagecpuResult.innerHTML = "";
         }
     }
 });
@@ -116,12 +112,11 @@ scissorsBtn.addEventListener("click", () => {
     if (count >= 10) {
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
+        messagecpuResult.classList.add('collapsed');
          if (playerCount > cpuCount) {
             messageResult.innerHTML = "You win!!";
-            messagecpuResult.innerHTML = "";
         } else {
             messageResult.innerHTML = "Game over!!";
-            messagecpuResult.innerHTML = "";
         }
     }
 });
