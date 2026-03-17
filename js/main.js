@@ -1,5 +1,6 @@
 'use strict';
 //QUERY-SELECTOR
+const userBtn = document.querySelector(".js_user_btn")
 const rockBtn = document.querySelector('.js_btn_rock');
 const paperBtn = document.querySelector('.js_btn_paper');
 const scissorsBtn = document.querySelector('.js_btn_scissors');
@@ -85,6 +86,11 @@ scissorsBtn.addEventListener("click", () => {
     scoreboard();
 });
 //PLAY-REPLAY
+playBtn.addEventListener('click', () => {
+    userBtn.classList.remove('collapsed');
+    playBtn.classList.add('collapsed');
+});
+
 replayBtn.addEventListener("click", () => {
     playerCount = 0;
     cpuCount = 0;
@@ -95,24 +101,8 @@ replayBtn.addEventListener("click", () => {
 /*
 if (playerCount + cpuCount === 10) {
         messageResult.innerHTML = "Game over!";
-        btn.classList.toggle(".collapsed")
+    
     }
+
+
 */
-/* 
-function playResults(){
-    const playerPlay = playerChoice.value;
-    const cpuPlay = randomChoice();
-    if(playerPlay === cpuPlay){
-        choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
-        messageResult.innerHTML = `You read my mind!`
-    }else if ((playerPlay === "rock" && cpuPlay === "scissors") || (playerPlay === "paper" && cpuPlay === "rock") || (playerPlay === "scissors" && cpuPlay === "paper")){
-        playerCount += 1
-        choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
-        messageResult.innerHTML = `You win!`
-    }else{
-        cpuCount += 1
-        choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
-        messageResult.innerHTML = `You lose!`
-    }
-}
-    */
