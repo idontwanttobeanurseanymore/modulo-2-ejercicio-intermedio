@@ -8,7 +8,7 @@ const replayBtn = document.querySelector(".js_replayBtn")
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_message_result");
-
+let choicesMessage = document.querySelector(".choices")
 //FUNCTIONS
 function randomChoice(number){
     number = Math.floor(Math.random()*10);
@@ -31,27 +31,28 @@ function playResults(){
 
     playerResult.innerHTML = `${playerPlay}`;
     cpuResult.innerHTML = `${cpuPlay}`;
+    choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
 
     if(playerPlay === cpuPlay){
-    messageResult.innerHTML = `¡Empatamos!`
+    messageResult.innerHTML = `You read my mind!`
     }else{
         if(playerPlay === "rock"){
             if(cpuPlay === "paper"){
-                messageResult.innerHTML = `¡Yo gano!`
+                messageResult.innerHTML = `I win!`
             }else if(cpuPlay === "scissors"){
-                messageResult.innerHTML = `¡Tú ganas!`
+                messageResult.innerHTML = `You win!`
             }
         }if(playerPlay === "paper"){
             if(cpuPlay === "scissors"){
-                messageResult.innerHTML = `¡Yo gano!`;
+                messageResult.innerHTML = `I win!`;
             }else if(cpuPlay === "rock"){
-                messageResult.innerHTML = `¡Tú ganas!`;
+                messageResult.innerHTML = `You win!`;
             }
         }if(playerPlay === "scissors"){
             if(cpuPlay === "rock"){
-                messageResult.innerHTML = `¡Yo gano!`
+                messageResult.innerHTML = `I win!`
             }else if(cpuPlay === "paper"){
-                messageResult.innerHTML = `¡Tú ganas!`
+                messageResult.innerHTML = `You win!`
             }
         }
     }
@@ -67,4 +68,5 @@ replayBtn.addEventListener('click', () => {
 //cuando juege 10 movimientos, mostrar
 })
 
+Empate 5-5???
 */

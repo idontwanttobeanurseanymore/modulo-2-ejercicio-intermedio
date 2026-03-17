@@ -10,31 +10,32 @@
 <body>
 
   <header>
-    <h1>Juego Piedra, Papel y Tijeras</h1>
+    <h1>Rock, paper, scissors</h1>
   </header>
 
   <main class="gameBox">
 
     <section class="game">
-      <h2>Elige aquí tu jugada</h2>
+      <h2>Do you think you can win?</h2>
         <div class="js_options">
             <form class="js_player_options">
                 <label for="js_player_choice">
                     <select id="js_player_choice" name="js_player_choice" class="js_player_choice">
-                        <option value="">Selecciona una opción</option>
-                        <option value="rock">Piedra</option>
-                        <option value="paper">Papel</option>
-                        <option value="scissors">Tijeras</option>
+                        <option value="">Choose your game</option>
+                        <option value="rock">Rock</option>
+                        <option value="paper">Paper</option>
+                        <option value="scissors">Scissors</option>
                     </select>
                 </label>
             </form>
         </div>
-      <button class="btn js_playBtn">Jugar</button>
+      <button class="btn js_playBtn">Play</button>
         <div class="results">
-            <div class="message js_message_result">
+            <div class="choices">
                 <p class="playerMessage js_player_result"></p>
                 <p class="cpuMessage js_CPU_result"></p>
             </div>
+            <p class="message js_message_result"></p>
         </div>
       
         <div class="scoreboard collapsed">
