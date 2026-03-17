@@ -3,14 +3,16 @@
 const playerChoice = document.querySelector(".js_player_choice");
 const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
+const playerScore = document.querySelector(".js_player_score")
+const cpuScore = document.querySelector(".js_CPU_score")
 
 //DATA
 let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_message_result");
 let choicesMessage = document.querySelector(".choices")
-
-
+let playerCount = 0;
+let cpuCount = 0;
 
 //FUNCTIONS
 function randomChoice(number){
@@ -28,6 +30,7 @@ function randomChoice(number){
     }
     return cpuPlay
 }
+
 function playResults(){
     const playerPlay = playerChoice.value;
     const cpuPlay = randomChoice();
@@ -38,23 +41,15 @@ function playResults(){
     choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
     
     if(playerPlay === cpuPlay){
-        //tie
         messageResult.innerHTML = `You read my mind!`
     }else if ((playerPlay === plays[0] && cpuPlay === plays[2]) || (playerPlay === plays[1] && cpuPlay === plays[0]) || (playerPlay === plays[2] && cpuPlay === plays[1])){
-        //user wins
         playerCount += 1
         messageResult.innerHTML = `You win!`
-
     }else{
-        //cpu wins
         cpuCount += 1
         messageResult.innerHTML = `You lose!`
-    } 
+    } //por qué suma a veces dos????
 }
-const playerScore = document.querySelector(".js_player_score")
-const cpuScore = document.querySelector(".js_CPU_score")
-let playerCount = 0;
-let cpuCount = 0;
 
 function scoreboard(){
     playResults();
@@ -71,7 +66,7 @@ playBtn.addEventListener("click", (ev) => {
 /*
 Cosas pendientes:
     - mostrar replayBtn a los 10 movimientos (Empate 5-5?);
-    - scoreboard (almacena las jugadas ganadas por cada jugador)
+    - scoreboard (almacena las jugadas ganadas por cada jugador) ALGO FALLA
 
 
 replayBtn.addEventListener('click', () => {
