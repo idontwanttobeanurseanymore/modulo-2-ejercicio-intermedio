@@ -79,10 +79,6 @@ select {
   border-radius: 5px;
 }
 
-.results {
-  margin-top: 15px;
-}
-
 .message{
   font-size: 1.5rem;
   padding: 1rem;
@@ -97,11 +93,17 @@ select {
   border: 1px solid var(--accent);
 
 }
-.score{
+.scores{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   font-weight: 100;
   padding: 0.5rem
 }
-
+.score{
+  display:flex;
+  flex-direction: column;
+}
 .collapsed{
   display: none;
 }
