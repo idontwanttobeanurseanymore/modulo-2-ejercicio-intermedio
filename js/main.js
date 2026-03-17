@@ -9,6 +9,10 @@ let playerResult = document.querySelector(".js_player_result");
 let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_message_result");
 let choicesMessage = document.querySelector(".choices")
+
+let playerCount = 0;
+let cpuCount = 0;
+
 //FUNCTIONS
 function randomChoice(number){
     number = Math.floor(Math.random()*10);
@@ -38,20 +42,26 @@ function playResults(){
     }else{
         if(playerPlay === "rock"){
             if(cpuPlay === "paper"){
-                messageResult.innerHTML = `I win!`
+                cpuCount++;
+                messageResult.innerHTML = `You lose!`
             }else if(cpuPlay === "scissors"){
+                playerCount++;
                 messageResult.innerHTML = `You win!`
             }
         }if(playerPlay === "paper"){
             if(cpuPlay === "scissors"){
-                messageResult.innerHTML = `I win!`;
+                cpuCount++;
+                messageResult.innerHTML = `You lose!`;
             }else if(cpuPlay === "rock"){
+                playerCount++;
                 messageResult.innerHTML = `You win!`;
             }
         }if(playerPlay === "scissors"){
             if(cpuPlay === "rock"){
-                messageResult.innerHTML = `I win!`
+                cpuCount++;
+                messageResult.innerHTML = `You lose!`
             }else if(cpuPlay === "paper"){
+                playerCount++;
                 messageResult.innerHTML = `You win!`
             }
         }
