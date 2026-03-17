@@ -18,21 +18,14 @@ let cpuCount = 0;
 
 function randomChoice(){
     const plays = ["rock", "paper", "scissors"];
-    const cpuPlay = plays[Math.floor(Math.random() * 3)];
-    if (cpuPlay === 0){
-        cpuPlay = "rock"
-    }else if (cpuPlay === 1){
-        cpuPlay = "paper"
-    }else if(cpuPlay === 2){
-        cpuPlay = "scissors"
-    }
-    return cpuPlay
+    return plays[Math.floor(Math.random() * 3)];
 }
 
 function playResults(){
     const playerPlay = playerChoice.value;
     const cpuPlay = randomChoice();
-    if (!playerPlay) {
+
+    if (!playerPlay) { // encadenar o no encadenar??
         messageResult.innerHTML = "Choose an option!";
     }else if(playerPlay === cpuPlay){
         choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
@@ -49,8 +42,8 @@ function playResults(){
 }
 
 function scoreboard(){
-    playerScore.innerHTML = `Your points: ${playerCount}`;
-    cpuScore.innerHTML = `My points: ${cpuCount}`
+        playerScore.innerHTML = `Your points: ${playerCount}`;
+        cpuScore.innerHTML = `My points: ${cpuCount}`
 }
 //EVENTS
 
@@ -58,13 +51,19 @@ playBtn.addEventListener("click", (ev) => { //cada vez que pulso el botón, sele
     ev.preventDefault();
     playResults();
     scoreboard();
+    
 });
 
 replayBtn.addEventListener("click", () => {
-    //que aparezca cuando playerCount + cpuCount = 10??? Y si es empate???
-    //classList.contains(.collapsed) +add/remove   
     playerCount = 0;
     cpuCount = 0;
     scoreboard();
-    messageResult.innerHTML = "New game!";
+    messageResult.innerHTML = "Game over!!";
 });
+
+/*
+if (playerCount + cpuCount === 10) {
+        messageResult.innerHTML = "Game over!";
+        btn.classList.toggle(".collapsed")
+    }
+*/
