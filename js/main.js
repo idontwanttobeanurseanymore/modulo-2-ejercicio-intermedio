@@ -15,17 +15,15 @@ let playerCount = 0;
 let cpuCount = 0;
 
 //FUNCTIONS
-function randomChoice(number){
-    number = Math.floor(Math.random()*10);
-    let cpuPlay = cpuResult.value
-    if (number <= 3){
-        //0, 1, 2, 3
+
+function randomChoice(){
+    const plays = ["rock", "paper", "scissors"];
+    const cpuPlay = plays[Math.floor(Math.random() * 3)];
+    if (cpuPlay === 0){
         cpuPlay = "rock"
-    }else if (number <=6){
-        //4, 5, 6
+    }else if (cpuPlay === 1){
         cpuPlay = "paper"
-    }else if(number <= 9){
-        //7, 8, 9
+    }else if(cpuPlay === 2){
         cpuPlay = "scissors"
     }
     return cpuPlay
@@ -34,84 +32,38 @@ function randomChoice(number){
 function playResults(){
     const playerPlay = playerChoice.value;
     const cpuPlay = randomChoice();
-    const plays = ["rock", "paper", "scissors"]; // 0, 1, 2
-
-    playerResult.innerHTML = `${playerPlay}`;
-    cpuResult.innerHTML = `${cpuPlay}`;
-    choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
-    
-    if(playerPlay === cpuPlay){
+    if (!playerPlay) {
+        messageResult.innerHTML = "Choose an option!";
+    }else if(playerPlay === cpuPlay){
+        choicesMessage.innerHTML = ""
         messageResult.innerHTML = `You read my mind!`
-    }else if ((playerPlay === plays[0] && cpuPlay === plays[2]) || (playerPlay === plays[1] && cpuPlay === plays[0]) || (playerPlay === plays[2] && cpuPlay === plays[1])){
+    }else if ((playerPlay === "rock" && cpuPlay === "scissors") || (playerPlay === "paper" && cpuPlay === "rock") || (playerPlay === "scissors" && cpuPlay === "paper")){
         playerCount += 1
         messageResult.innerHTML = `You win!`
+        choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
     }else{
         cpuCount += 1
         messageResult.innerHTML = `You lose!`
-    } //por qué suma a veces dos????
+        choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
+    }
 }
 
 function scoreboard(){
-    playResults();
     playerScore.innerHTML = `Your points: ${playerCount}`;
     cpuScore.innerHTML = `My points: ${cpuCount}`
 }
 
 playBtn.addEventListener("click", (ev) => {
-  ev.preventDefault();
-  playResults();
-  scoreboard();
+    ev.preventDefault();
+    playResults();
+    scoreboard();
 });
 
-/*
-Cosas pendientes:
-    - mostrar replayBtn a los 10 movimientos (Empate 5-5?);
-    - scoreboard (almacena las jugadas ganadas por cada jugador) ALGO FALLA
-
-
-replayBtn.addEventListener('click', () => {
-    variable.classList.contains(.collapsed) +add/remove       
-//cuando juege 10 movimientos, mostrar
-})
-
-*/
-/*
-function playResults(){
-    const playerPlay = playerChoice.value;
-    const cpuPlay = randomChoice();
-
-    playerResult.innerHTML = `${playerPlay}`;
-    cpuResult.innerHTML = `${cpuPlay}`;
-    choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
-
-    if(playerPlay === cpuPlay){
-    messageResult.innerHTML = `You read my mind!`
-    }else{
-        if(playerPlay === "rock"){
-            if(cpuPlay === "paper"){
-                
-                messageResult.innerHTML = `You lose!`
-            }else if(cpuPlay === "scissors"){
-                
-                messageResult.innerHTML = `You win!`
-            }
-        }if(playerPlay === "paper"){
-            if(cpuPlay === "scissors"){
-                
-                messageResult.innerHTML = `You lose!`;
-            }else if(cpuPlay === "rock"){
-                
-                messageResult.innerHTML = `You win!`;
-            }
-        }if(playerPlay === "scissors"){
-            if(cpuPlay === "rock"){
-                
-                messageResult.innerHTML = `You lose!`
-            }else if(cpuPlay === "paper"){
-                
-                messageResult.innerHTML = `You win!`
-            }
-        }
-    }
-}
-*/
+replayBtn.addEventListener("click", () => {
+    //que aparezca cuando playerCount + cpuCount = 10??? Y si es empate???
+    //classList.contains(.collapsed) +add/remove   
+    playerCount = 0;
+    cpuCount = 0;
+    scoreboard();
+    messageResult.innerHTML = "New game!";
+});
