@@ -4,6 +4,7 @@ const userBtn = document.querySelector(".js_user_btn")
 const rockBtn = document.querySelector('.js_btn_rock');
 const paperBtn = document.querySelector('.js_btn_paper');
 const scissorsBtn = document.querySelector('.js_btn_scissors');
+const scoreboardBox = document.querySelector('.js_scoreboard')
 const plays = ["rock", "paper", "scissors"];
 
 const playBtn = document.querySelector(".js_playBtn");
@@ -76,19 +77,23 @@ function scoreboard(){
 rockBtn.addEventListener("click", () => { 
     gameplayRock();
     scoreboard();
+    scoreboardBox.classList.remove('collapsed');
 });
 paperBtn.addEventListener("click", () => { 
     gameplayPaper();
     scoreboard();
+    scoreboardBox.classList.remove('collapsed');
 });
 scissorsBtn.addEventListener("click", () => { 
     gameplayScissors();
     scoreboard();
+    scoreboardBox.classList.remove('collapsed');
 });
 //PLAY-REPLAY
 playBtn.addEventListener('click', () => {
     userBtn.classList.remove('collapsed');
     playBtn.classList.add('collapsed');
+    
 });
 
 replayBtn.addEventListener("click", () => {
@@ -103,6 +108,8 @@ if (playerCount + cpuCount === 10) {
         messageResult.innerHTML = "Game over!";
     
     }
-
+Pendientes:
+    - Que aparezca (y funcione) replayBtn
+    
 
 */
