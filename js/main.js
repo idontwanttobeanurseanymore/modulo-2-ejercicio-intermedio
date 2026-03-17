@@ -35,16 +35,16 @@ function playResults(){
     if (!playerPlay) {
         messageResult.innerHTML = "Choose an option!";
     }else if(playerPlay === cpuPlay){
-        choicesMessage.innerHTML = ""
+        choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
         messageResult.innerHTML = `You read my mind!`
     }else if ((playerPlay === "rock" && cpuPlay === "scissors") || (playerPlay === "paper" && cpuPlay === "rock") || (playerPlay === "scissors" && cpuPlay === "paper")){
         playerCount += 1
-        messageResult.innerHTML = `You win!`
         choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
+        messageResult.innerHTML = `You win!`
     }else{
         cpuCount += 1
-        messageResult.innerHTML = `You lose!`
         choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
+        messageResult.innerHTML = `You lose!`
     }
 }
 
@@ -52,8 +52,9 @@ function scoreboard(){
     playerScore.innerHTML = `Your points: ${playerCount}`;
     cpuScore.innerHTML = `My points: ${cpuCount}`
 }
+//EVENTS
 
-playBtn.addEventListener("click", (ev) => {
+playBtn.addEventListener("click", (ev) => { //cada vez que pulso el botón, select = "" y choicesMessage.innerHTML = ""???
     ev.preventDefault();
     playResults();
     scoreboard();
