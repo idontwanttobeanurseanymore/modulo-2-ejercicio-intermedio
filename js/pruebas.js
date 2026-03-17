@@ -26,3 +26,25 @@ function scoreboard(){
     playerScore.innerHTML = `${playerCount}`;
     cpuScore.innerHTML = `${cpuCount}`
 }
+
+/*
+<div class="js_options">
+            <form class="js_player_options">
+                <label for="js_player_choice">
+                    <select id="js_player_choice" name="js_player_choice" class="js_player_choice">
+                        <option value="">...</option>
+                        <option value="rock">Rock</option>
+                        <option value="paper">Paper</option>
+                        <option value="scissors">Scissors</option>
+                    </select>
+                </label>
+            </form>
+        </div>
+*/
+
+/*
+document.querySelector('.js_btn_rock').addEventListener('click', () => {
+   results()
+   scoreboard()
+});
+*/

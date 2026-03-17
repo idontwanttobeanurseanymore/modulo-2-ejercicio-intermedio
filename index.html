@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Piedra, papel y tijeras</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,33 +21,22 @@
 
     <section class="game">
       <h2>Do you think you can win?</h2>
-        <div class="js_options">
-            <form class="js_player_options">
-                <label for="js_player_choice">
-                    <select id="js_player_choice" name="js_player_choice" class="js_player_choice">
-                        <option value="">...</option>
-                        <option value="rock">Rock</option>
-                        <option value="paper">Paper</option>
-                        <option value="scissors">Scissors</option>
-                    </select>
-                </label>
-            </form>
-        </div>
-      <button class="btn js_playBtn">Play</button>
-        <div class="results">
-            <div class="choices">
-                <p class="playerMessage js_player_result"></p>
-                <p class="cpuMessage js_CPU_result"></p>
-            </div>
-            <p class="message js_message_result"></p>
-        </div>
-      
-        <div class="scoreboard">
-            <p class="">Scoreboard</p>
-            <p class="score js_player_score"></p>
-            <p class="score js_CPU_score"></p>
-        </div>
-         <button class="btn js_replayBtn collapsed">Replay</button>
+      <div class="user_btn js_user_btn">
+        <button class="btn js_btn_rock" value="rock">Rock</button>
+        <button class="btn js_btn_paper" value="paper">Paper</button>
+        <button class="btn js_btn_scissors" value="scissors">Scissors</button>
+      </div>
+      <button class="btn js_playBtn collapsed">Play</button>
+      <div class="results">
+        <p class="message js_message_result"></p>
+      </div>
+
+      <div class="scoreboard">
+        <p class="">Scoreboard</p>
+        <p class="score js_player_score"></p>
+        <p class="score js_CPU_score"></p>
+      </div>
+      <button class="btn js_replayBtn collapsed">Replay</button>
     </section>
 
   </main>
@@ -51,4 +44,5 @@
   <script src="./js/main.js"></script>
 
 </body>
+
 </html>
