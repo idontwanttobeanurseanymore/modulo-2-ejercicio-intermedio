@@ -10,8 +10,7 @@ let cpuResult = document.querySelector(".js_CPU_result");
 let messageResult = document.querySelector(".js_message_result");
 let choicesMessage = document.querySelector(".choices")
 
-let playerCount = 0;
-let cpuCount = 0;
+
 
 //FUNCTIONS
 function randomChoice(number){
@@ -32,6 +31,59 @@ function randomChoice(number){
 function playResults(){
     const playerPlay = playerChoice.value;
     const cpuPlay = randomChoice();
+    const plays = ["rock", "paper", "scissors"]; // 0, 1, 2
+
+    playerResult.innerHTML = `${playerPlay}`;
+    cpuResult.innerHTML = `${cpuPlay}`;
+    choicesMessage.innerHTML = `${playerPlay} VS ${cpuPlay}`;
+    
+    if(playerPlay === cpuPlay){
+        //tie
+        messageResult.innerHTML = `You read my mind!`
+    }else if ((playerPlay === plays[0] && cpuPlay === plays[2]) || (playerPlay === plays[1] && cpuPlay === plays[0]) || (playerPlay === plays[2] && cpuPlay === plays[1])){
+        //user wins
+        playerCount += 1
+        messageResult.innerHTML = `You win!`
+
+    }else{
+        //cpu wins
+        cpuCount += 1
+        messageResult.innerHTML = `You lose!`
+    } 
+}
+const playerScore = document.querySelector(".js_player_score")
+const cpuScore = document.querySelector(".js_CPU_score")
+let playerCount = 0;
+let cpuCount = 0;
+
+function scoreboard(){
+    playResults();
+    playerScore.innerHTML = `Your points: ${playerCount}`;
+    cpuScore.innerHTML = `My points: ${cpuCount}`
+}
+
+playBtn.addEventListener("click", (ev) => {
+  ev.preventDefault();
+  playResults();
+  scoreboard();
+});
+
+/*
+Cosas pendientes:
+    - mostrar replayBtn a los 10 movimientos (Empate 5-5?);
+    - scoreboard (almacena las jugadas ganadas por cada jugador)
+
+
+replayBtn.addEventListener('click', () => {
+    variable.classList.contains(.collapsed) +add/remove       
+//cuando juege 10 movimientos, mostrar
+})
+
+*/
+/*
+function playResults(){
+    const playerPlay = playerChoice.value;
+    const cpuPlay = randomChoice();
 
     playerResult.innerHTML = `${playerPlay}`;
     cpuResult.innerHTML = `${cpuPlay}`;
@@ -42,41 +94,29 @@ function playResults(){
     }else{
         if(playerPlay === "rock"){
             if(cpuPlay === "paper"){
-                cpuCount++;
+                
                 messageResult.innerHTML = `You lose!`
             }else if(cpuPlay === "scissors"){
-                playerCount++;
+                
                 messageResult.innerHTML = `You win!`
             }
         }if(playerPlay === "paper"){
             if(cpuPlay === "scissors"){
-                cpuCount++;
+                
                 messageResult.innerHTML = `You lose!`;
             }else if(cpuPlay === "rock"){
-                playerCount++;
+                
                 messageResult.innerHTML = `You win!`;
             }
         }if(playerPlay === "scissors"){
             if(cpuPlay === "rock"){
-                cpuCount++;
+                
                 messageResult.innerHTML = `You lose!`
             }else if(cpuPlay === "paper"){
-                playerCount++;
+                
                 messageResult.innerHTML = `You win!`
             }
         }
     }
 }
-playBtn.addEventListener("click", (ev) => {
-  ev.preventDefault();
-  playResults();
-});
-
-/*
-replayBtn.addEventListener('click', () => {
-    variable.classList.contains(.collapsed) +add/remove       
-//cuando juege 10 movimientos, mostrar
-})
-
-Empate 5-5???
 */
