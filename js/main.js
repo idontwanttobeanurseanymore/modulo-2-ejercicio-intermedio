@@ -9,8 +9,10 @@ const playBtn = document.querySelector(".js_playBtn");
 const replayBtn = document.querySelector(".js_replayBtn")
 const playerScore = document.querySelector(".js_player_score")
 const cpuScore = document.querySelector(".js_CPU_score");
+const messages = document.querySelector('.messages');
 const messagecpuResult = document.querySelector(".js_message_cpuResult")
 const messageResult = document.querySelector(".js_message_result");
+const gameh2 = document.querySelector('.js_h2');
 const plays = ["rock", "paper", "scissors"];
 
 //DATA
@@ -24,45 +26,39 @@ function randomChoice() {
 }
 function gameplayRock() {
     const cpuPlay = randomChoice()
+    messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
     if (cpuPlay === "rock") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
-        messageResult.innerHTML = `You read my mind!`
+        messageResult.innerHTML = `It's a tie!`
     } else if (cpuPlay === "paper") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         cpuCount += 1
         messageResult.innerHTML = `You lose!`
     } else if (cpuPlay === "scissors") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         playerCount += 1
         messageResult.innerHTML = `You win!`
     }
 }
 function gameplayPaper() {
     const cpuPlay = randomChoice()
+    messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
     if (cpuPlay === "paper") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
-        messageResult.innerHTML = `You read my mind!`
+        messageResult.innerHTML = `It's a tie!`
     } else if (cpuPlay === "rock") {
         playerCount += 1
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You win!`
     } else if (cpuPlay === "scissors") {
         cpuCount += 1
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         messageResult.innerHTML = `You lose!`
     }
 }
 function gameplayScissors() {
     const cpuPlay = randomChoice()
+    messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
     if (cpuPlay === "scissors") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
-        messageResult.innerHTML = `You read my mind!`
+        messageResult.innerHTML = `It's a tie!`
     } else if (cpuPlay === "rock") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         cpuCount += 1
         messageResult.innerHTML = `You lose!`
     } else if (cpuPlay === "paper") {
-        messagecpuResult.innerHTML = `My choice: ${cpuPlay}`
         playerCount += 1
         messageResult.innerHTML = `You win!`
     }
@@ -77,10 +73,12 @@ rockBtn.addEventListener("click", () => {
     gameplayRock();
     scoreboard();
     scoreboardBox.classList.remove('collapsed');
+    gameh2.classList.add('collapsed')
+    messages.classList.remove('collapsed')
     if (count >= 10) {
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
-        messagecpuResult.classList.add('collapsed');
+        messagecpuResult.classList.add('collapsed')
         if (playerCount > cpuCount) {
             messageResult.innerHTML = "You win!";
         } else {
@@ -93,10 +91,12 @@ paperBtn.addEventListener("click", () => {
     gameplayPaper();
     scoreboard();
     scoreboardBox.classList.remove('collapsed');
+    gameh2.classList.add('collapsed')
+    messages.classList.remove('collapsed')
     if (count >= 10) {
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
-        messagecpuResult.classList.add('collapsed');
+        messagecpuResult.classList.add('collapsed')
          if (playerCount > cpuCount) {
             messageResult.innerHTML = "You win!";
         } else {
@@ -109,10 +109,12 @@ scissorsBtn.addEventListener("click", () => {
     gameplayScissors();
     scoreboard();
     scoreboardBox.classList.remove('collapsed');
+    gameh2.classList.add('collapsed')
+    messages.classList.remove('collapsed')
     if (count >= 10) {
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
-        messagecpuResult.classList.add('collapsed');
+        messagecpuResult.classList.add('collapsed')
          if (playerCount > cpuCount) {
             messageResult.innerHTML = "You win!";
         } else {
@@ -125,17 +127,19 @@ scissorsBtn.addEventListener("click", () => {
 playBtn.addEventListener('click', () => {
     userBtn.classList.remove('collapsed');
     playBtn.classList.add('collapsed');
+    messagecpuResult.classList.remove('collapsed')
+    gameh2.innerHTML = `Shoot!`
 });
 
 replayBtn.addEventListener("click", () => {
     playerCount = 0;
     cpuCount = 0;
     count = 0;
-    scoreboard();
-    messageResult.innerHTML = "";
-    messagecpuResult.innerHTML = "";
-    userBtn.classList.remove('collapsed');
+    gameh2.classList.remove('collapsed');
+    playBtn.classList.remove('collapsed');
     replayBtn.classList.add('collapsed')
+    scoreboardBox.classList.add('collapsed')
+    messages.classList.add('collapsed')
 });
 
 /*
