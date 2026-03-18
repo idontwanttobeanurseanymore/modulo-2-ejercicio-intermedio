@@ -78,16 +78,20 @@ select {
   font-size: 1rem;
   border-radius: 5px;
 }
-
-.message{
-  font-size: 1.5rem;
+.messages{
+  font-size: 1rem;
   padding: 1rem;
-  font-weight: bold;
+}
+.resultmessage{
+  font-size: 2rem;
+}
+.cpumessage{
+  font-size: 1rem;
 }
 .scoreboard{
   display: flex;
   flex-direction: column;
-  font-size: 2 rem;
+  font-size: 2.5 rem;
   font-weight: bold;
   padding: 1rem;
   border: 1px solid var(--accent);
@@ -104,6 +108,9 @@ select {
   display:flex;
   flex-direction: column;
   font-size: 4rem;
+  @media{
+    font-size: 2rem;
+  }
 }
 .collapsed{
   display: none;

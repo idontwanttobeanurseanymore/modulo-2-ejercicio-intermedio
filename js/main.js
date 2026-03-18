@@ -82,9 +82,9 @@ rockBtn.addEventListener("click", () => {
         replayBtn.classList.remove('collapsed');
         messagecpuResult.classList.add('collapsed');
         if (playerCount > cpuCount) {
-            messageResult.innerHTML = "You win!!";
+            messageResult.innerHTML = "You win!";
         } else {
-            messageResult.innerHTML = "Game over!!";
+            messageResult.innerHTML = "Game over!";
         }
     }
 });
@@ -98,9 +98,9 @@ paperBtn.addEventListener("click", () => {
         replayBtn.classList.remove('collapsed');
         messagecpuResult.classList.add('collapsed');
          if (playerCount > cpuCount) {
-            messageResult.innerHTML = "You win!!";
+            messageResult.innerHTML = "You win!";
         } else {
-            messageResult.innerHTML = "Game over!!";
+            messageResult.innerHTML = "Game over!";
         }
     }
 });
@@ -114,9 +114,9 @@ scissorsBtn.addEventListener("click", () => {
         replayBtn.classList.remove('collapsed');
         messagecpuResult.classList.add('collapsed');
          if (playerCount > cpuCount) {
-            messageResult.innerHTML = "You win!!";
+            messageResult.innerHTML = "You win!";
         } else {
-            messageResult.innerHTML = "Game over!!";
+            messageResult.innerHTML = "Game over!";
         }
     }
 });
