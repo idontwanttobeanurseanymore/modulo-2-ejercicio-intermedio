@@ -144,5 +144,6 @@ replayBtn.addEventListener("click", () => {
 });
 
 /*
-
+ ¿Se puede simplificar a 1 función y 1 btn para los 3?
+ ¿por qué sale un gato en la pestaña????
 */
