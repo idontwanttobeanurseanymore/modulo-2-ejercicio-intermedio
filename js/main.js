@@ -135,7 +135,8 @@ replayBtn.addEventListener("click", () => {
     playerCount = 0;
     cpuCount = 0;
     count = 0;
-    gameh2.classList.remove('collapsed');
+    gameh2.classList.remove('collapsed')
+    gameh2.innerHTML = `Try again?`
     playBtn.classList.remove('collapsed');
     replayBtn.classList.add('collapsed')
     scoreboardBox.classList.add('collapsed')
