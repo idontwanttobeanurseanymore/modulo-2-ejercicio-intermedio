@@ -52,6 +52,10 @@ h2{
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
 }
 
 .btn {
@@ -98,12 +102,13 @@ button:hover {
 .scoreboard{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   font-size: 2.5rem;
   font-weight: bold;
   padding: 1rem 0;
   border: 3px solid var(--accent);
   border-radius: 5px;
-
+  
 }
 .scores{
   display: flex;
