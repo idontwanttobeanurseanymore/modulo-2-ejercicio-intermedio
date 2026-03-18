@@ -103,6 +103,7 @@ select {
 .score{
   display:flex;
   flex-direction: column;
+  font-size: 4rem;
 }
 .collapsed{
   display: none;
