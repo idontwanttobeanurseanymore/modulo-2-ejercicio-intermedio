@@ -1,8 +1,3 @@
-/*
-Pendientes:
-  - Scoreboard está muy feo
-  - En general está muy feo
-*/
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +9,6 @@ Pendientes:
   --black: #0d0d0d;
   --main: #e6e6e6;
   --secondary: #999999;
-  --border: #333333;
   --accent: #39ff14;
 }
 .vt323-regular {
@@ -62,7 +56,7 @@ h2{
   margin-top: 10px;
   padding: 10px 15px;
   border: none;
-  background: black;
+  background:var(--black);
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -88,7 +82,7 @@ h2{
 }
 button:hover {
   background: var(--accent);
-  color: black;
+  color: var(--black);
 }
 .messages{
   font-size: 2rem;
