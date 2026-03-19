@@ -79,14 +79,6 @@ replayBtn.addEventListener("click", () => {
     messagesBox.classList.add('collapsed')
 });
 
-<<<<<<< HEAD
-/*
- ¿Se puede simplificar a 1 función y 1 btn para los 3?
- ¿por qué sale un gato en la pestaña????
-*/
-=======
-// 3 eventos, 1 función!!
-//revisar replay
 rockBtn.addEventListener('click', () =>{
     count++;
     gameh2.classList.add('collapsed');
@@ -143,4 +135,3 @@ scissorsBtn.addEventListener("click", () => {
         }
     }
 })
->>>>>>> a73d9f178c784b29951627e24d5d5224750b1a3e
