@@ -93,10 +93,10 @@ button:hover {
 .messages{
   font-size: 2rem;
 }
-.resultmessage{
+.message{
   font-size: 2rem;
 }
-.cpumessage{
+.cpu_message{
   font-size: 1rem;
 }
 .scoreboard{
