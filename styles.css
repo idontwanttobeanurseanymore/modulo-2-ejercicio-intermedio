@@ -95,6 +95,7 @@ button:hover {
 }
 .message{
   font-size: 2rem;
+  padding-bottom: 1rem;
 }
 .cpu_message{
   font-size: 1rem;

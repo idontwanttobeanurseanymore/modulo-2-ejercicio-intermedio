@@ -56,11 +56,15 @@ function scoreboard() {
 playBtn.addEventListener('click', () => {
     userBtn.classList.remove('collapsed');
     playBtn.classList.add('collapsed');
-    messagesBox.classList.remove('collapsed')
+    messagesBox.classList.remove('collapsed');
+    messagecpu.innerHTML = ``;
+    message.innerHTML = ``;
     scoreboardBox.classList.remove('collapsed');
+    gameh2.classList.remove('collapsed')
     gameh2.innerHTML = `Shoot!`
     playerScore.innerHTML = `${playerCount}`;
     cpuScore.innerHTML = `${cpuCount}`
+    
 });
 
 replayBtn.addEventListener("click", () => {
@@ -76,14 +80,14 @@ replayBtn.addEventListener("click", () => {
 });
 
 // 3 eventos, 1 función!!
-//No funciona el count++
+//revisar replay
 rockBtn.addEventListener('click', () =>{
     count++;
     gameh2.classList.add('collapsed');
     gameplay("rock");
     scoreboard();
     scoreboardBox.classList.remove('collapsed');
-    messages.classList.remove('collapsed');
+    messagesBox.classList.remove('collapsed');
     if(count >= 10){
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
@@ -102,7 +106,7 @@ paperBtn.addEventListener("click", () => {
     gameplay("paper");
     scoreboard();
     scoreboardBox.classList.remove('collapsed');
-    messages.classList.remove('collapsed');
+    messagesBox.classList.remove('collapsed');
     if(count >= 10){
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
@@ -121,7 +125,7 @@ scissorsBtn.addEventListener("click", () => {
     gameh2.classList.add('collapsed');
     scoreboard();
     scoreboardBox.classList.remove('collapsed');
-    messages.classList.remove('collapsed');
+    messagesBox.classList.remove('collapsed');
     if(count >= 10){
         userBtn.classList.add('collapsed');
         replayBtn.classList.remove('collapsed');
