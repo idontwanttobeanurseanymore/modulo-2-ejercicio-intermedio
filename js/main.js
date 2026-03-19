@@ -57,7 +57,7 @@ playBtn.addEventListener('click', () => {
     userBtn.classList.remove('collapsed');
     playBtn.classList.add('collapsed');
     messagesBox.classList.remove('collapsed');
-    messagecpu.innerHTML = ``;
+    messagecpu.classList.remove('collapsed');;
     message.innerHTML = ``;
     scoreboardBox.classList.remove('collapsed');
     gameh2.classList.remove('collapsed')
