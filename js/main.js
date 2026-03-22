@@ -91,7 +91,7 @@ rockBtn.addEventListener('click', () =>{
         replayBtn.classList.remove('collapsed');
         messagecpu.classList.add('collapsed');
         if (playerCount > cpuCount){
-            message.innerHTML = "Good played!";
+            message.innerHTML = "Well played!";
         }else {
             message.innerHTML = "Game over!";
         }
@@ -110,7 +110,7 @@ paperBtn.addEventListener("click", () => {
         replayBtn.classList.remove('collapsed');
         messagecpu.classList.add('collapsed');
         if (playerCount > cpuCount){
-            message.innerHTML = "Good played!";
+            message.innerHTML = "Well played!";
         }else {
             message.innerHTML = "Game over!";
         }
@@ -129,7 +129,7 @@ scissorsBtn.addEventListener("click", () => {
         replayBtn.classList.remove('collapsed');
         messagecpu.classList.add('collapsed');
         if (playerCount > cpuCount){
-            message.innerHTML = "Good played!";
+            message.innerHTML = "Well played!";
         }else {
             message.innerHTML = "Game over!";
         }
